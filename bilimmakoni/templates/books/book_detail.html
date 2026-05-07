@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.title }} - Bilim Makoni</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .back { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p><strong>Muallif:</strong> {{ book.author }}</p>
+    <p><strong>Narxi:</strong> {{ book.price }} so'm</p>
+    <p><strong>Tavsif:</strong> {{ book.description }}</p>
+    <p><strong>Nashr etilgan:</strong> {{ book.published_date }}</p>
+    <div class="back">
+        <a href="{% url 'book_list' %}">← Orqaga</a>
+    </div>
+</body>
+</html>

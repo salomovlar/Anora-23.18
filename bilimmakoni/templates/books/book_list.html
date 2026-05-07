@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblar ro'yxati - Bilim Makoni</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .book { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; }
+        a { color: #333; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Bilim Makoni - Kitoblar</h1>
+    {% for book in books %}
+        <div class="book">
+            <h3><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></h3>
+            <p>Muallif: {{ book.author }}</p>
+            <p>Narxi: {{ book.price }} so'm</p>
+        </div>
+    {% empty %}
+        <p>Hozircha kitoblar mavjud emas.</p>
+    {% endfor %}
+</body>
+</html>
